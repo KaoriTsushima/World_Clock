@@ -12,15 +12,15 @@
     <div class="container">
       <h1>🕒World Clock🕘</h1>
       <form action="/submit">
-        <select id="countries">
+        <select id="cities">
           <option>Select country</option>
-          <option value="paris">Paris 🇫🇷</option>
-          <option value="tokyo">Tokyo 🇯🇵</option>
-          <option value="sydney">Sydney 🇦🇺</option>
+          <option value="Europe/Paris">Paris 🇫🇷</option>
+          <option value="Asia/Tokyo">Tokyo 🇯🇵</option>
+          <option value="Australia/Sydney">Sydney 🇦🇺</option>
         </select>
       </form>
 
-      <div class="flex-container">
+      <div class="flex-container" id="city-time">
         <div class="city-time-info">
           <div class="cityName" id="london">
             London<br /><span class="date">July 25th 2023</span>

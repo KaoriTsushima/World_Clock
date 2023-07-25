@@ -20,6 +20,37 @@ function showTime(event) {
     alert(`It is ${sydneyTime} in Australia/Sydney`);
   }
 }
-
 let countriesSelect = document.querySelector("#countries");
 countriesSelect.addEventListener("change", showTime);
+
+function updateTime() {
+  let londonElement = document.querySelector("#london");
+  let londonDate = document.querySelector("#london .date");
+  londonDate.innerHTML = moment().tz("Europe/London").format("MMMM Do YYYY");
+  let londonTime = document.querySelector("#londonTime");
+
+  londonTime.innerHTML = moment()
+    .tz("Europe/London")
+    .format("h:mm:ss [<small>]A[</small>]");
+
+  let newYorkElement = document.querySelector("#newYork");
+  let newYorkDate = document.querySelector("#newYork .date");
+  newYorkDate.innerHTML = moment()
+    .tz("America/New_York")
+    .format("MMMM Do YYYY");
+  let newYorkTime = document.querySelector("#newYorkTime");
+
+  newYorkTime.innerHTML = moment()
+    .tz("America/New_York")
+    .format("h:mm:ss [<small>]A[</small>]");
+
+  let romeElement = document.querySelector("#rome");
+  let romeDate = document.querySelector("#rome .date");
+  romeDate.innerHTML = moment().tz("Europe/Rome").format("MMMM Do YYYY");
+  let romeTime = document.querySelector("#romeTime");
+
+  romeTime.innerHTML = moment()
+    .tz("Europe/Rome")
+    .format("h:mm:ss [<small>]A[</small>]");
+}
+setInterval(updateTime, 1000);
